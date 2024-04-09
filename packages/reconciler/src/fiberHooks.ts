@@ -212,7 +212,8 @@ function updateState<State>(): [State, Dispatch<State>] {
 	const hook = updateWorkInProgressHook()
 	// 计算新的state
 	const queue = hook.updateQueue as UpdateQueue<State>
-	// const baseState = hook.baseState
+	const baseState = hook.baseState
+	const none = '没用的东西'
 
 	const pending = queue.shared.pending
 	const current = currentHook as Hook
