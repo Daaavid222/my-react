@@ -209,11 +209,10 @@ function createFCUpdateQueue<State>() {
 }
 
 function updateState<State>(): [State, Dispatch<State>] {
-	debugger
 	const hook = updateWorkInProgressHook()
 	// 计算新的state
 	const queue = hook.updateQueue as UpdateQueue<State>
-	const baseState = hook.baseState
+	// const baseState = hook.baseState
 
 	const pending = queue.shared.pending
 	const current = currentHook as Hook
